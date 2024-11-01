@@ -8,3 +8,6 @@ Migration:
 
 nodemon:
 <https://www.npmjs.com/package/nodemon>
+
+dbeaver:
+<https://dbeaver.io/>
