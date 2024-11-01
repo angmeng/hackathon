@@ -1,0 +1,30 @@
+{
+  "development": {
+    "database": "dev_db",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "storage": "./db/dev_db.sqlite",
+    "define": {
+      "charset": "utf8",
+      "createdAt": "created_at",
+      "updatedAt": "updated_at",
+      "timestamps": true
+    },
+    "pool": {
+      "max": 5,
+      "idle": 30000,
+      "acquire": 60000
+    }
+  },
+  "test": {
+    "database": "test_db",
+    "host": "127.0.0.1",
+    "dialect": "sqlite",
+    "define": {
+      "underscored": true,
+      "underscoredAll": true,
+      "createdAt": "created_at",
+      "updatedAt": "updated_at"
+    }
+  }
+}
