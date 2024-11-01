@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var http = require('http');
-var { createTerminus } = require('@godaddy/terminus');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -38,18 +36,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-const server = http.createServer(app);
-const port = 3000; // Change this to your preferred port number
-const options = {
-  signals: ['SIGINT', 'SIGTERM'],
-  timeout: 5000,
-};
-
-createTerminus(server, options);
-server.listen(port, () => {
-  console.log(`Server running on port ${port}`);
 });
 
 module.exports = app;
